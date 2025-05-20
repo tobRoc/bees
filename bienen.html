@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThingSpeak Charts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 20px;
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: auto;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        iframe {
+            width: 425px;
+            height: 225px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>ThingSpeak Charts</h1>
+    <table>
+        <tr>
+            <td>
+                <!-- Chart 1 -->
+                <iframe src="https://thingspeak.mathworks.com/channels/2580415/charts/2?results=3000" title="Chart 1"></iframe>
+            </td>
+            <td>
+                <!-- Chart 2 -->
+                <iframe src="https://thingspeak.mathworks.com/channels/2580415/charts/4?results=3000" title="Chart 2"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Chart 3 -->
+                <iframe src="https://thingspeak.mathworks.com/channels/2580415/charts/6?results=3000" title="Chart 3"></iframe>
+            </td>
+            <td>
+                <!-- Chart 4 -->
+                <iframe src="https://thingspeak.mathworks.com/channels/2580415/charts/8?results=3000" title="Chart 4"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <!-- Chart 5 -->
+                <iframe src="https://thingspeak.mathworks.com/channels/2965471/charts/2?results=3000" title="Chart 5"></iframe>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
