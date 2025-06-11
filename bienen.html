@@ -38,32 +38,58 @@
     </style>
 </head>
 <body>
+<script>
+
+    function changeAllShownValues(idNumber) {
+        element1 = document.getElementById(idNumber);
+        value = element1.value;
+        document.getElementById('idNumber2').value = value;
+        document.getElementById('idNumber4').value = value;
+        document.getElementById('idNumber6').value = value;
+        document.getElementById('idNumber8').value = value;
+        document.getElementById('idNumber10').value = value;
+        changeShownValues(2);
+        changeShownValues(4);
+        changeShownValues(6);
+        changeShownValues(8);
+        changeShownValues(10);
+    }
+    function changeShownValues(number) {
+        element1 = document.getElementById("idNumber" + number);
+        value = element1.value;
+        if(number == 10) {
+            document.getElementById("idStock" + number).src = "https://thingspeak.mathworks.com/channels/2965471/charts/2?results=" + value;
+        } else
+        document.getElementById("idStock" + number).src = "https://thingspeak.mathworks.com/channels/2580415/charts/" + number + "?results=" + value;    
+    }                    
+</script>
     <h1>ThingSpeak Charts</h1>
+    <input id="idNumberAll" type="number" value=3000 step="100" onchange="changeAllShownValues('idNumberAll')"/><br />
     <table>
         <tr>
             <td>
-                <!-- Chart 1 -->
-                <iframe src="https://thingspeak.mathworks.com/channels/2580415/charts/2?results=3000" title="Chart 1"></iframe>
+                <input id="idNumber2" type="number" value=3000 step="100" onchange="changeShownValues('2')"/><br />
+                <iframe id="idStock2" src="https://thingspeak.mathworks.com/channels/2580415/charts/2?results=3000" title="Stock 1"></iframe>
             </td>
             <td>
-                <!-- Chart 2 -->
-                <iframe src="https://thingspeak.mathworks.com/channels/2580415/charts/4?results=3000" title="Chart 2"></iframe>
+                <input id="idNumber4" type="number" value=3000 step="100" onchange="changeShownValues('4')"/><br />
+                <iframe id="idStock4" src="https://thingspeak.mathworks.com/channels/2580415/charts/4?results=3000" title="Stock 2"></iframe>
             </td>
         </tr>
         <tr>
             <td>
-                <!-- Chart 3 -->
-                <iframe src="https://thingspeak.mathworks.com/channels/2580415/charts/6?results=3000" title="Chart 3"></iframe>
+                <input id="idNumber6" type="number" value=3000 step="100" onchange="changeShownValues('6')"/><br />
+                <iframe id="idStock6" src="https://thingspeak.mathworks.com/channels/2580415/charts/6?results=3000" title="Stock 3"></iframe>
             </td>
             <td>
-                <!-- Chart 4 -->
-                <iframe src="https://thingspeak.mathworks.com/channels/2580415/charts/8?results=3000" title="Chart 4"></iframe>
+                <input id="idNumber8" type="number" value=3000 step="100" onchange="changeShownValues('8')"/><br />
+                <iframe id="idStock8"  src="https://thingspeak.mathworks.com/channels/2580415/charts/8?results=3000" title="Stock 4"></iframe>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <!-- Chart 5 -->
-                <iframe src="https://thingspeak.mathworks.com/channels/2965471/charts/2?results=3000" title="Chart 5"></iframe>
+                <input id="idNumber10" type="number" value=3000 step="100" onchange="changeShownValues('10')"/><br />
+                <iframe id="idStock10" src="https://thingspeak.mathworks.com/channels/2965471/charts/2?results=3000" title="Stock 5"></iframe>
             </td>
         </tr>
     </table>
